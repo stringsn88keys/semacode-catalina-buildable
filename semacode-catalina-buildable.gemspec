@@ -1,16 +1,18 @@
 # require 'rubygems'
 # require 'rake/gempackagetask'
 
-Gem::Specification.new do |s| 
-  s.name = "semacode"
-  s.version = "0.7.5"
-  s.author = "Guido Sohne"
-  s.email = "guido@sohne.net"
-  s.homepage = "http://sohne.net/projects/semafox/"
+Gem::Specification.new do |s|
+  s.name = "semacode-catalina-buildable"
+  s.version = "0.0.1"
+  s.author = ["Guido Sohne", "Thomas Powell"]
+  s.email = ["guido@sohne.net", "twilliampowell@gmail.com"]
+  s.licenses = ['GPL-2.0-or-later']
   s.platform = Gem::Platform::RUBY
   s.summary = "Create semacodes (2D barcodes) using Ruby."
-  s.rubyforge_project = "semacode"
   s.description = <<DESC
+  This is a clone of the semacode gem source with extension code that *compiles* in C99.
+  No guarantees that it doesn't have other problems.
+
   This Ruby extension implements a DataMatrix encoder for Ruby. It is typically
   used to create semacodes, which are barcodes, that contain URLs. This encoder
   does not create image files or visual representations of the semacode. This is
@@ -22,8 +24,8 @@ DESC
   s.extensions << 'ext/extconf.rb'
   s.add_dependency('rake', '>= 0.7.0')
   s.files = Dir[
-    "{lib,ext}/**/*.rb", 
-    "ext/**/*.c", 
+    "{lib,ext}/**/*.rb",
+    "ext/**/*.c",
     "ext/**/*.h",
     "tests/**/*.rb",
     "README",
